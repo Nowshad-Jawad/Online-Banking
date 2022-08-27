@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}Transaction Report{% endblock %}
+
+{% block content %}
+    <h1>Transaction Report</h1>
+    <hr />
+    {% if chart %}
+      <img src="data:image/png;base64, {{chart|safe}}">
+    {% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banking</title>
+</head>
+<body>
+ <div>
+      <form class="" method="POST" enctype="multipart/form-data" action="" novalidate>
+        {% csrf_token %}
+          {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+          <p>{{error}}</p>
+            {% endfor %}
+          {% endif %}
+        {%for form in form%}
+          {{form.label_tag}} {{form}} {{form.errors|striptags}} <br> <br>
+          {% endfor %}
+        <input type="submit" value="SAVE">
+
+      </form>
+
+    </div>
+</body>
+</html>

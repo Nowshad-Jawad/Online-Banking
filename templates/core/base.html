@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block head_title %}Banking System{% endblock %}
+        </title>
+    </head>
+    <body>
+
+    {% if messages %}
+  {% for message in messages %}
+    <div class="{{message.tags}}">{{message}}</div>
+  {% endfor %}
+    {% endif %}
+        {% block body %}
+            {% include 'core/navbar.html' %}
+
+                {% block content %}
+                {% endblock %}
+        {% endblock %}
+    </body>
+</html>

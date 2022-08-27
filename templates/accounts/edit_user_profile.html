@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}Banking System{% endblock %}
+
+{% block content %}
+<h1>Profile</h1>
+<hr>
+
+
+<h3>Welcome {{name}}</h3>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        {% for error in form.non_field_errors  %}
+            <p> {{ error }} </p>
+        {% endfor %}
+    {% endif %}
+
+    {% for form1 in form1 %}
+        {{form1.label_tag}} {{form1}} {{form1.errors|striptags}} <br> <br>
+    {% endfor %}
+
+    {% for form2 in form2 %}
+        {{form2.label_tag}} {{form2}} {{form2.errors|striptags}} <br> <br>
+    {% endfor %}
+    <input type="submit" value="Save">
+
+</form>
+
+<button><a href="#">Change Password</a></button>
+
+{% endblock %}

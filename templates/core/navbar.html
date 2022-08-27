@@ -1,0 +1,33 @@
+<nav>
+
+        {% if request.user.is_authenticated %}
+
+                <button> <a href="{% url 'accounts:user_profile' %}">
+                    Profile
+                </a> </button>
+                <button> <a href="{% url 'transactions:transaction_report' %}">
+                    Transaction Report
+                </a> </button>
+                <button> <a href="{% url 'transactions:deposit_money' %}">
+                    Deposit
+                </a> </button>
+                <button> <a href="{% url 'transactions:withdraw_money' %}">
+                    Withdraw
+                </a> </button>
+                <button> <a href="{% url 'transactions:transfer_money' %}">
+                    Transfer Money
+                </a> </button>
+
+
+
+                <button> <a href="{% url 'accounts:user_logout' %}">Logout</a> </button>
+
+        {% else %}
+                <button> <a href="{% url 'accounts:user_login' %}">Login</a> </button>
+
+
+                <button> <a href="{% url 'accounts:user_registration' %}">Register</a> </button>
+
+        {% endif %}
+
+</nav>

@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h1>Transfer History</h1>
+ <div>
+          {% csrf_token %}
+          {{form.user_account}}
+          {{form.beneficiary_account}}
+          {{form.amount}}
+
+      </form>
+    </div>
+
+{% endblock %}

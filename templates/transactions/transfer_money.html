@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h1>Transfer Money</h1>
+<hr />
+ <div>
+      <form class="" method="POST" action="" novalidate>
+          {% csrf_token %}
+          {% for form in form%}
+          {{form.label_tag}} {{form}} {{form.errors|striptags}} <br> <br>
+          {% endfor %}
+        <input type="submit" value="SCAN">
+
+      </form>
+    </div>
+{% endblock %}

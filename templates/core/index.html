@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}Banking System{% endblock %}
+
+{% block content %}
+
+            <h1>Online Banking System</h1>
+            <p>
+                Simple web application for online banking.
+            </p> <br>
+            <a href="{% url 'accounts:user_registration' %}" >Register</a>
+
+
+{% endblock %}

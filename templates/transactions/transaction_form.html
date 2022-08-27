@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+<hr />
+
+    <form method="post">
+
+        {% csrf_token %}
+
+            <label for="account2">
+                Beneficiary Account
+            </label>
+            <input  name="account2" id="account2" type="number" required placeholder="Beneficiary Account">
+
+        <label for="amount">
+                Amount
+            </label>
+            <input  name="amount" id="amount" type="number" required placeholder="Amount">
+        {% if form.amount.errors %}
+            {% for error in form.amount.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+        <button type="submit">
+            Submit
+        </button>
+    </form>
+
+{% endblock %}

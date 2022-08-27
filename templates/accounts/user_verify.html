@@ -1,0 +1,5 @@
+{% autoescape off %}
+    {% csrf_token %}
+    Hi {{last_name}},
+    http://{{domain}}
+{% endautoescape %}

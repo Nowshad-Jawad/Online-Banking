@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}Banking System{% endblock %}
+
+{% block content %}
+<h1>Profile</h1>
+<hr>
+
+<h3>Welcome {{name}}</h3>
+
+
+    {% csrf_token %}
+    User Name : {{user}} <br><br>
+    Name : {{user.first_name}} {{user.last_name}} <br><br>
+    Account Number : {{user.account.account_no}} <br><br>
+    Gender : {{user.account.gender}} <br><br>
+    Birth Date : {{user.account.birth_date}} <br><br>
+    Balance : {{user.account.balance}} <br><br>
+
+
+<button><a href="{% url 'accounts:edit_profile' %}">Edit Profile Information</a></button>
+<button><a href="{% url 'accounts:change_password' %}">Change Password</a></button>
+
+{% endblock %}

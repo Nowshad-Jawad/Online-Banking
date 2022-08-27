@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block head_title %}Transaction Report{% endblock %}
+
+{% block content %}
+    <h1>Transaction Report</h1>
+    <hr />
+    <table>
+        <thead>
+        <tr>
+            <th>Transaction Type</th>
+            <th>Date</th>
+            <th>Beneficiary Account</th>
+            <th>Amount</th>
+            <th>Balance After Transaction</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for transaction in object_list %}
+        <tr>
+            <td>{{ transaction.get_transaction_type_display }}</td>
+            <td>{{ transaction.timestamp }}</td>
+            <td>{{ transaction.account2 }}</td>
+            <td> {{ transaction.amount }}</td>
+            <td> {{ transaction.balance_after_transaction }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <th>Final Balance</th>
+            <th> {{ account.balance }}</th>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+{% endblock %}
